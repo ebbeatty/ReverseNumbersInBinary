@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<!-- ReverseNumbersInBinary.html?input=0..1000000 -->
+<html>
+  <body>
+    <script type="text/javascript">
+      var input = window.location.search.substring(1).split("=")[1];
+      var bindigits = Math.floor((Math.log(input)/Math.log(2)));
+      var output = 0;
+      for(var curpower = 0; curpower <= bindigits; curpower++) {
+        output += ((input >> (bindigits - curpower)) & 1) ? Math.pow(2,curpower) : 0; 
+      }
+      document.write(output); 
+    </script>
+  </body>
+</html>
